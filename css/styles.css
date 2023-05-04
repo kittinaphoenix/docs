@@ -1,0 +1,91 @@
+body {
+    overflow: hidden;
+}
+.docs-menu-left {
+    background-color: #F7F7F7;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow-y: scroll;
+}
+.docs-menu-left::-webkit-scrollbar {
+    width: 10px;
+}
+.docs-menu-left::-webkit-scrollbar-thumb {
+    background-color: #C5C5C5;
+    border-radius: 5px;
+}
+.docs-menu-left h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 0;
+}
+.content {
+    height: 100vh;
+    overflow-y: scroll;
+}
+.content::-webkit-scrollbar {
+    width: 10px;
+}
+.content::-webkit-scrollbar-thumb {
+    background-color: #C5C5C5;
+    border-radius: 5px;
+}
+/* Menu styles */
+.nav-list ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+.nav-list ul ul {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+.nav-list input[type="checkbox"]:checked ~ ul {
+    max-height: 1000px;
+    transition: max-height 0.5s ease-in-out;
+}
+.nav-list input[type="checkbox"] {
+    display: none;
+}
+.nav-list label {
+    cursor: pointer;
+    display: block;
+    padding: 5px 0;
+    
+}
+.nav-list label:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.nav-list a {
+    display: block;
+    padding: 5px 0;
+    text-decoration: none;
+    color: #000;
+}
+.nav-list a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.li-tree-custom {
+    margin-left: 0 !important;
+}
+.li-direct-custom {
+    margin-left: 0 !important;
+}
+.li-tree-label-custom {
+    font-weight: 500;
+    position: relative;
+}
+.li-btn-custom {
+    font-weight: 400;
+}
+.arrow-container {
+    position: absolute;
+    right: 13px;
+    top: 4px;
+    transition: transform 0.3s ease-in-out;
+}
+.arrow-rotate {
+    transform: rotate(90deg);
+}
