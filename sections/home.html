@@ -1,7 +1,43 @@
 <div class="container mt-5 row offset-1 col-10">
-<h1 class="mb-4 text-center">Welcome to Docs!</h1>
-<p>Docs is a documentation project template built with HTML, CSS, and JavaScript. It provides a basic structure for creating a documentation site that's easy to navigate and expand. You can use it to document anything from APIs and libraries to software projects and processes.</p>
-<p>The left-hand menu lists all the sections and sub-sections of your documentation. Click on any section to expand it and see its contents. Each section can have multiple sub-sections, and you can nest them as deep as you want.</p>
-<p>The right-hand pane displays the content of the selected section. You can use HTML, Markdown, or any other text format to write your documentation content. Docs will automatically load the content from the corresponding HTML file when you click on a section in the menu.</p>
-<p>To get started with Docs, simply clone the repository, edit the sections.js file to add your own sections, feel free to customize the styling to match your branding.</p>
+<h1 class="mb-4 text-center">Project Documentation</h1>
+<p>This project is a website with a left-hand side menu that allows users to navigate through different sections.</p>
+<p>The main.js file contains JavaScript functions that handle the loading and display of the pages. The populateMenu() function generates the menu HTML based on the "sections" JSON data, while the loadContent() function fetches the content of the page and displays it on the right-hand side of the site (For run locally needs to disable CORS).</p>
+<h2 class="mb-4 text-center">Structure</h2>
+<pre><code>|__ README.md
+|__ css/
+    |__ all.min.css
+    |__ bootstrap.min.css
+    |__ bootstrap.min.css.map
+    |__ default-light.min.css
+    |__ styles.css
+|__ index.html
+|__ libs/
+    |__ all.min.js
+    |__ bootstrap.min.js
+    |__ bootstrap.min.js.map
+    |__ highlight.min.js
+    |__ jquery.min.js
+    |__ jquery.min.map
+    |__ popper.min.js
+    |__ popper.min.js.map
+|__ sections/
+|__ src/
+    |__ main.js
+    |__ sections.js
+|__ webfonts/</code></pre>
+<h2 class="mb-4 text-center">Installation</h2>
+<pre><code>Clone this repository. & Open index.html in your browser to view the documentation site.</code></pre>
+<h2 class="mb-4 text-center">Usage</h2>
+<p>The sections.js file is a JavaScript module that exports an array of objects, where each object represents a section of the website. The array is called sections and it contains different types of sections such as direct sections and tree sections.</p>
+<p>A direct section is a simple section that has a label and a URL key-value pair. When the user clicks on the label, the website loads the content from the URL specified.</p>
+<p>A tree section is a section that has a label and a tree key-value pair. The tree is an array of objects that can be either direct sections or tree sections. This creates a hierarchical structure where the parent section contains child sections that can also contain child sections.</p>
+<p>The url key-value pair is important because it specifies the location of the content that needs to be loaded when the user clicks on a section. This location can be an HTML file, a JSON file, or any other file format that contains the content to be displayed.</p>
+<p>The sections.js module is used by the main.js file to generate the menu on the left-hand side of the website. When the user clicks on a section in the menu, the loadContent function in main.js is called with the URL of the section. The loadContent function fetches the content from the specified URL and inserts it into the container element on the right-hand side of the website.</p>   
+<h2 class="mb-4 text-center">Known Issues</h2>
+<p>The application currently does not verify the integrity of sections.js, which could potentially lead to errors if the file is not properly formatted.</p>
+<p>While the nested tree structure of the sections array is flexible and allows for easy customization, it does not verify the integrity of the tree structure and its respective direct URLs. If the structure or URLs are incorrect, this could result in errors when loading pages.</p>
+<p>The application also does not validate the integrity of each HTML file loaded, which could potentially result in errors if the file is not properly formatted or if there are issues with the code.</p>
+<p>Currently, the application does not run scripts inside the sections, which may limit functionality for certain use cases.</p>
+<h2 class="mb-4 text-center">Generator</h2>
+<p>The pyGenerator folder contains an experimental Python script that generates HTML based on an input array. This script is not required for the project to function and is intended for advanced users who wish to generate HTML programmatically. To use the script, modify the input_arr array in generator.py and run the script from the command line: python generator.py. The generated HTML will be printed to the console.</p>
 </div>
