@@ -2,11 +2,21 @@ var menuAccordion;
 var containerContent;
 
 document.addEventListener("DOMContentLoaded", function () {
+  const toggleSwitch = document.querySelector('#dark-mode-switch');
+  toggleSwitch.addEventListener('change', switchTheme, false);
+
   menuAccordion = document.getElementById('left-menu');
   containerContent = document.getElementById("content-container");
   populateMenu();
   loadContent("sections/home.html")
 });
+function switchTheme(event) {
+  if (event.target.checked) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+}
 
 function populateMenu() {
   const menuHTML = generateMenu(sections);

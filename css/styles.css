@@ -1,5 +1,19 @@
+:root {
+    --bg-color: #fff;
+    --text-color: #111;
+    --code-bg-color: #f5f5f5;
+    --code-text-color: #555;
+}
 body {
     overflow: hidden;
+    background-color: var(--bg-color);
+}
+h1, h2, h3, h4, h5, p, th, td {
+    color: var(--text-color);
+}
+code {
+    background-color: var(--code-bg-color) !important;
+    color: var(--code-text-color) !important;
 }
 pre code {
     border: 1px solid #3d65a1;
@@ -7,7 +21,29 @@ pre code {
     border-radius: 5px;
     display: block;
     padding: 10px;
-  }
+}
+[data-theme='dark'] {
+    --bg-color: #111;
+    --text-color: #eee;
+    --code-bg-color: #222;
+    --code-text-color: #ccc;
+}
+
+[data-theme='light'] {
+    --bg-color: #fff;
+    --text-color: #111;
+    --code-bg-color: #f5f5f5;
+    --code-text-color: #555;
+}
+.form-switch .form-check-input {
+    border-color: #3d65a1;
+    box-shadow: 0 0 0 0 #3d65a1;
+}
+.form-switch .form-check-input:checked {
+    background-color: #333;
+    border-color: #3d65a1;
+    box-shadow: 0 0 0 0 #3d65a1;
+}
 .docs-menu-left {
     background-color: #3d65a1;
     height: 100vh;
@@ -17,11 +53,11 @@ pre code {
     overflow-y: scroll !important;
 }
 .docs-menu-left::-webkit-scrollbar {
-    background-color:white;
+    background-color:--bg-color;
     width: 10px;
 }
 .docs-menu-left::-webkit-scrollbar-thumb {
-    background-color: black;
+    background-color: --text-color;
     border-radius: 5px;
 }
 .content {
