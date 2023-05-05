@@ -62,6 +62,6 @@ function loadContent(url) {
     });
 }
 function toggleArrowRotation(element) {
-  //const arrowContainer = element.parentElement.querySelector(".arrow-container");
-  //arrowContainer.classList.toggle("arrow-rotate");
+  const arrowContainer = element.parentElement.querySelector(".arrow-container");
+  arrowContainer.classList.toggle("arrow-rotate");
 }
