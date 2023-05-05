@@ -13,37 +13,32 @@ pre code {
     height: 100vh;
     position: sticky;
     top: 0;
-    overflow-y: scroll;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
     color:white;
+    overflow-y: scroll !important;
 }
 .docs-menu-left::-webkit-scrollbar {
+    background-color:white;
     width: 10px;
 }
 .docs-menu-left::-webkit-scrollbar-thumb {
-    background-color: #C5C5C5;
+    background-color: black;
     border-radius: 5px;
-}
-.docs-menu-left h5 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-top: 0;
 }
 .content {
     height: 100vh;
     overflow-y: scroll;
 }
-.content::-webkit-scrollbar {
-    width: 10px;
-}
-.content::-webkit-scrollbar-thumb {
-    background-color: #C5C5C5;
-    border-radius: 5px;
-}
 /* Menu styles */
+.menu-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
 .nav-list ul {
     list-style: none;
     padding-left: 0;
+    padding-right: 0;
     margin-bottom: 0;
 }
 .nav-list ul ul {

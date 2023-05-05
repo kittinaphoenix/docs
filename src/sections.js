@@ -11,7 +11,7 @@ const sections = [
         {
           "type": "direct",
           "label": "Overview",
-          "url": "sections/docs/intro.html"
+          "url": "sections/docs/intro.html",
         },
         {
           "type": "direct",
