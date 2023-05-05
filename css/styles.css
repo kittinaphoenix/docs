@@ -23,8 +23,8 @@ pre code {
     padding: 10px;
 }
 [data-theme='dark'] {
-    --bg-color: #111;
-    --text-color: #eee;
+    --bg-color: #0d1117;
+    --text-color: #f0f6fc;
     --code-bg-color: #222;
     --code-text-color: #ccc;
 }
@@ -53,11 +53,11 @@ pre code {
     overflow-y: scroll !important;
 }
 .docs-menu-left::-webkit-scrollbar {
-    background-color:--bg-color;
+    background-color:var(--bg-color) !important;
     width: 10px;
 }
 .docs-menu-left::-webkit-scrollbar-thumb {
-    background-color: --text-color;
+    background-color: var(--text-color);
     border-radius: 5px;
 }
 .content {
