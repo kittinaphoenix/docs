@@ -1,31 +1,21 @@
 # Example with all valid objects
 input_arr = [
-    {"type": "t", "v": [1, "Project Documentation"]},
-    {"type": "p", "v": "This project is a website with a left-hand side menu that allows users to navigate through different sections."},
-    {"type": "p", "v": "The main.js file contains JavaScript functions that handle the loading and display of the pages. The populateMenu() function generates the menu HTML based on the \"sections\" JSON data, while the loadContent() function fetches the content of the page and displays it on the right-hand side of the site (For run locally needs to disable CORS)."},
-    {"type": "t", "v": [2, "Structure"]},
-    {"type": "p", "v": "The repository is structured as follows:"},
-    {"type": "p", "v": "css/: contains CSS files used by the project."},
-    {"type": "p", "v": "libs/: contains external libraries used by the project."},
-    {"type": "p", "v": "pyGenerator/generator.py: contains Python code for generating HTML documentation."},
-    {"type": "p", "v": "sections/: contains HTML files for different sections of the project."},
-    {"type": "p", "v": "src/main.js: contains JavaScript code for the main page."},
-    {"type": "p", "v": "src/sections.js: contains JavaScript code for the sections."},
-    {"type": "p", "v": "webfonts/: contains web fonts used by the project."},
-    {"type": "p", "v": "index.html: the main HTML file for the project."},
-    {"type": "t", "v": [2, "Installation"]},
-    {"type": "s", "v": 
-        "Clone this repository. & Open index.html in your browser to view the documentation site."
-    },
-    {"type": "t", "v": [2, "Usage"]},
-    {"type": "p", "v": "The sections.js file is a JavaScript module that exports an array of objects, where each object represents a section of the website. The array is called sections and it contains different types of sections such as direct sections and tree sections."},
-    {"type": "p", "v": "A direct section is a simple section that has a label and a URL key-value pair. When the user clicks on the label, the website loads the content from the URL specified."},
-    {"type": "p", "v": "A tree section is a section that has a label and a tree key-value pair. The tree is an array of objects that can be either direct sections or tree sections. This creates a hierarchical structure where the parent section contains child sections that can also contain child sections."},
-    {"type": "p", "v": "The url key-value pair is important because it specifies the location of the content that needs to be loaded when the user clicks on a section. This location can be an HTML file, a JSON file, or any other file format that contains the content to be displayed."},
-    {"type": "p", "v": "The sections.js module is used by the main.js file to generate the menu on the left-hand side of the website. When the user clicks on a section in the menu, the loadContent function in main.js is called with the URL of the section. The loadContent function fetches the content from the specified URL and inserts it into the container element on the right-hand side of the website."},
-    {"type": "t", "v": [2, "Known Issues"]}
+{"type":"t","v":[1,"Header h1 Example"]},
+{"type":"t","v":[2,"Header h2 Example"]},
+{"type":"t","v":[3,"Header h3 Example"]},
+{"type":"t","v":[4,"Header h4 Example"]},
+{"type":"t","v":[5,"Header h5 Example"]},
+{"type":"p","v":"Parragraph Example."},
+{"type":"s","v":"{\n    'Code': 'Block',\n    'v': [\n        5,\n        \"Your &lt;b&gt;SNIPET&lt;br&gt; Exaample&lt;/b&gt;\"\n    ]\n}"},
+{"type":"ta","v":{
+"h":["Header 1", "Header 2", "Header 3"],
+"r":[
+["Row 1 Col 1", "Row 1 Col 2", "Row 1 Col 3"],
+["Row 2 Col 1", "Row 2 Col 2", "Row 2 Col 3"],
+["Row 3 Col 1", "Row 3 Col 2", "Row 3 Col 3"]
 ]
-
+}}
+]
 
 def generate_html(input_arr):
     output_str = '<div class="container mt-5 row offset-1 col-10">\n'
