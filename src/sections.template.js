@@ -11,7 +11,7 @@ const sections = [
 {
 "type":"direct",
 "label":"Section2",
-"url":"sections/docs/section2.html",
+"url":"sections/section2.html",
 }
 ]
 }
