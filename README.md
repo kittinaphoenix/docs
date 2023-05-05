@@ -10,7 +10,7 @@ The repository is structured as follows:
 - `libs/`: Contains the JS libraries files.
 - `src/`: Code folder.
   - `main.js`: Contains the code.
-  - `sections.js`: #sections array (read documentation).
+  - `sections.js`: sections array (read documentation).
 - `sections/`: Contains thesections of the documentation.
   - `docs/`: Contains its own documentation.
 - `index.html`: The main HTML file for the documentation site.
