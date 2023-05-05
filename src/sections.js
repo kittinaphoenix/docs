@@ -6,23 +6,47 @@ const sections = [
     },
     {
       "type": "tree",
-      "label": "Backend",
+      "label": "Docs",
       "tree": [
         {
           "type": "direct",
-          "label": "Folder Structure",
-          "url": "sections/backend/structure.html"
+          "label": "Overview",
+          "url": "sections/docs/intro.html"
         },
         {
-          "type": "tree",
-          "label": "API",
-          "tree": [
-            {
-              "type": "direct",
-              "label": "Intro",
-              "url": "sections/backend/api.html"
-            }
-          ]
+          "type": "direct",
+          "label": "Installation",
+          "url": "sections/docs/install.html"
+        },
+        {
+          "type": "direct",
+          "label": "Structure",
+          "url": "sections/docs/structure.html"
+        },
+        {
+          "type": "direct",
+          "label": "Usage",
+          "url": "sections/docs/howto.html"
+        },
+        {
+          "type": "direct",
+          "label": "Dependencies",
+          "url": "sections/docs/dependencies.html"
+        },
+        {
+          "type": "direct",
+          "label": "Testing and Debugging",
+          "url": "sections/docs/testdebug.html"
+        },
+        {
+          "type": "direct",
+          "label": "Future Plans",
+          "url": "sections/docs/future.html"
+        },
+        {
+          "type": "direct",
+          "label": "Conclusion",
+          "url": "sections/docs/conclusion.html"
         }
       ]
     }

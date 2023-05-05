@@ -1,12 +1,21 @@
 body {
     overflow: hidden;
 }
+pre code {
+    border: 1px solid #3d65a1;
+    border-left: 5px solid #3d65a1;
+    border-radius: 5px;
+    display: block;
+    padding: 10px;
+  }
 .docs-menu-left {
-    background-color: #F7F7F7;
+    background-color: #3d65a1;
     height: 100vh;
     position: sticky;
     top: 0;
     overflow-y: scroll;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+    color:white;
 }
 .docs-menu-left::-webkit-scrollbar {
     width: 10px;
@@ -62,7 +71,7 @@ body {
     display: block;
     padding: 5px 0;
     text-decoration: none;
-    color: #000;
+    color: white;
 }
 .nav-list a:hover {
     background-color: rgba(0, 0, 0, 0.1);

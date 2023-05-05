@@ -44,6 +44,7 @@ function loadContent(url) {
       const wrapper = document.createElement('div');
       wrapper.innerHTML = html;
       containerContent.innerHTML = html;
+      hljs.highlightAll();
     })
     .catch(error => {
       console.error(error);
