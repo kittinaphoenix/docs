@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   menuAccordion = document.getElementById('left-menu');
   containerContent = document.getElementById("content-container");
   populateMenu();
+  loadContent("sections/home.html")
 });
 
 function populateMenu() {

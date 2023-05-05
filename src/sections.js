@@ -1,8 +1,8 @@
 const sections = [
     {
       "type": "direct",
-      "label": "Introduction",
-      "url": "sections/intro.html"
+      "label": "Home",
+      "url": "sections/home.html"
     },
     {
       "type": "tree",
@@ -35,18 +35,8 @@ const sections = [
         },
         {
           "type": "direct",
-          "label": "Testing and Debugging",
-          "url": "sections/docs/testdebug.html"
-        },
-        {
-          "type": "direct",
-          "label": "Future Plans",
+          "label": "Future Plans & Conclusion",
           "url": "sections/docs/future.html"
-        },
-        {
-          "type": "direct",
-          "label": "Conclusion",
-          "url": "sections/docs/conclusion.html"
         }
       ]
     }

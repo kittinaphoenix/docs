@@ -1,44 +1,39 @@
-<div class="container mt-5">
-	<h1 class="mb-4">How to create sections using tree recursive methodology</h1>
-		
-	<p>The <code>sections</code> array is a tree data structure that contains information about the sections and subsections of the web application. It is used to generate the left menu bar of the application, and to load the content of the sections when the user clicks on them.</p>
-		
-	<p>The <code>sections</code> array contains two types of elements: <code>direct</code> and <code>tree</code>.</p>
-		
-	<table class="table">
-		<thead>
-			<tr>
-				<th>Key</th>
-				<th>Value</th>
-				<th>Description</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td><code>type</code></td>
-				<td><code>direct</code> or <code>tree</code></td>
-				<td>The type of the section element. If it's <code>direct</code>, it represents a leaf node in the tree. If it's <code>tree</code>, it represents a branch node in the tree.</td>
-			</tr>
-			<tr>
-				<td><code>label</code></td>
-				<td>A string</td>
-				<td>The label of the section or subsection. It's used to display the name of the section or subsection in the left menu bar.</td>
-			</tr>
-			<tr>
-				<td><code>url</code></td>
-				<td>A string</td>
-				<td>The URL of the section or subsection. It's used to load the content of the section or subsection when the user clicks on it in the left menu bar. The URL should be relative to the <code>sections/</code> directory of the web application.</td>
-			</tr>
-			<tr>
-				<td><code>tree</code></td>
-				<td>An array of section elements</td>
-				<td>Only present if the <code>type</code> is <code>tree</code>. It contains the sub-sections of the current section or subsection.</td>
-			</tr>
-		</tbody>
-	</table>
-		
-	<p>Here is an example of how to define a section with a sub-section:</p>
-
+<div class="container mt-5 row offset-1 col-10">
+<h1 class="mb-4 text-center">How to create sections using tree recursive methodology</h1>
+<p>The <code>sections</code> array is a tree data structure that contains information about the sections and subsections of the web application. It is used to generate the left menu bar of the application, and to load the content of the sections when the user clicks on them.</p>
+<p>The <code>sections</code> array contains two types of elements: <code>direct</code> and <code>tree</code>.</p>
+<table class="table">
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td><code>direct</code> or <code>tree</code></td>
+<td>The type of the section element. If it's <code>direct</code>, it represents a leaf node in the tree. If it's <code>tree</code>, it represents a branch node in the tree.</td>
+</tr>
+<tr>
+<td><code>label</code></td>
+<td>A string</td>
+<td>The label of the section or subsection. It's used to display the name of the section or subsection in the left menu bar.</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td>A string</td>
+<td>The URL of the section or subsection. It's used to load the content of the section or subsection when the user clicks on it in the left menu bar. The URL should be relative to the <code>sections/</code> directory of the web application.</td>
+</tr>
+<tr>
+<td><code>tree</code></td>
+<td>An array of section elements</td>
+<td>Only present if the <code>type</code> is <code>tree</code>. It contains the sub-sections of the current section or subsection.</td>
+</tr>
+</tbody>
+</table>
+<h4 class="text-center">Here is an example of how to define a section with a sub-section:</h4>
 <pre><code>const sections = [
     {
         "type": "tree",
@@ -57,8 +52,23 @@
         ]
     }
 ]</code></pre>
-
-		
-	<p>To create a new section or sub-section, simply add a new object to the <code>sections</code> array with the appropriate properties. If it's a leaf node, set the <code>type</code> property to <code>direct</code> and include the <code>label</code> and <code>url</code> properties. If it's a branch node, set the <code>type</code> property to <code>tree</code> and include the <code>label</code> and <code>tree</code> properties, where the <code>tree</code> property is an array of section elements.</p>
-    <p>Once the <code>sections</code> array is defined, you can use it to generate the left menu bar of the web application by iterating over the array and creating HTML elements for each section and sub-section.</p>
+<p>To create a new section or sub-section, simply add a new object to the <code>sections</code> array with the appropriate properties. If it's a leaf node, set the <code>type</code> property to <code>direct</code> and include the <code>label</code> and <code>url</code> properties. If it's a branch node, set the <code>type</code> property to <code>tree</code> and include the <code>label</code> and <code>tree</code> properties, where the <code>tree</code> property is an array of section elements.</p>
+<p>Once the <code>sections</code> array is defined, you can use it to generate the left menu bar of the web application by iterating over the array and creating HTML elements for each section and sub-section.</p>
+<h4 class="text-center">Good Practices</h4>
+<h5>The following are some good practices to consider when working with the code:</h5>
+<ul>
+<li>Use semantic and meaningful HTML tags to structure the content, and apply CSS styles appropriately to achieve the desired look and feel.</li>
+<li>Leverage existing libraries included, such as Bootstrap, Font Awesome, and Highlight.js, to enhance the functionality and appearance of your documentation.</li>
+<li>Document the code using meaningful comments and clear explanations.</li>
+</ul>
+<h4 class="text-center">Dummy Template</h4>
+<p>You can use this dummy code as a starting point for your sections:</p>
+<pre><code class="language-html">&lt;!--Libraries: Bootstrap, Font Awesome, and Highlight.js are already included in the code--&gt;
+&lt;div class="container mt-5 row offset-1 col-10"&gt;
+&lt;h1 class="mb-4 text-center"&gt;&lt;!--title section here--&gt;&lt;/h1&gt;
+&lt;!--Add your section content here, such as tables or pre code snippets--&gt;
+&lt;/div&gt;</code></pre>
+<p>
+This code includes the libraries Bootstrap, Font Awesome, and Highlight.js, so you don't need to import them again. You can replace the section title and content as needed.
+</p>
 </div>
