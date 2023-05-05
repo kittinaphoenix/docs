@@ -1,43 +1,20 @@
-# Example snippet code
+# Example with all valid objects
 input_arr = [
-    {"type": "t", "v": [1, "Documentation Example"]},
-    {"type": "p", "v": "This is an example of how to use the <code>generate_html()</code> method in the <code>pyGenerator/generator.py</code> module to generate an HTML document template based on a dummy template."},
-    {"type": "p", "v": "Modify the <code>input_arr</code> providing a valid array based on the format below."},
-    {"type": "t", "v": [2, "Possible objects for the array may include:"]},
-    {"type": "ta", "v": {
-        "h": ["Name", "Type <span style=\"color:grey;font-weight: 400;\">(Type)</span>", "v <span style=\"color:grey;font-weight: 400;\">(Value)</span>", "Description"],
-        "r": [
-            ["title", "t", "Array <code>[HeaderSize(Number),Text(String)]</code>", "Generates a title with the header size specified and with the text specified."],
-            ["Parragraph", "p", "Text(String)", "Generates a parragraph with the text specified."],
-            ["table", "ta", "Array <code>[h(Array),r(Array[Array])]</code>", "Generates a table with headers, and rows."],
-            ["Snippet", "s", "Text(String)", "Generates a block code snippet."]
-        ]
-    }},
-    {"type": "t", "v": [5, "Object Title example:"]},
-    {"type": "s", "v": "{\n    'type': 't',\n    'v': [\n        5,\n        \"Your &lt;b&gt;title&lt;br&gt; here&lt;/b&gt;\"\n    ]\n}"},
-    {"type": "t", "v": [5, "Object Title Key Value list:"]},
-    {"type": "ta", "v": {
-        "h": ["Name", "Type", "Description"],
-        "r": [
-            ["<code>[0]</code> Header Size", "Number", "From <code>1</code> to <code>5</code>. Is the header size."],
-            ["<code>[1]</code> Header Text", "String", "The text inside the element, can content valid HTML tags, such as <code>&lt;b&gt;Mi&lt;br&gt;Title&lt;/b&gt;</code>"]
-        ]
-    }},
-    {"type": "t", "v": [5, "Object Parragraph example:"]},
-    {"type": "s", "v": "{\n    'type': 'p',\n    'v': \"Your &lt;b&gt;parragraph&lt;br&gt;text&lt;/b&gt;here.\"\n}"},
-    {"type": "p", "v": "In this case the key <code>'v'</code> is directly the string of the parragraph, which can also include valid HTML Tags as the title."},
-     {"type": "t", "v": [5, "Object Table example:"]},
-    {"type": "s", "v": "{\n    'type': 'ta',\n    'v': {\n        'h': ['Header1', 'Header2'],\n        'r': [\n            ['Row1 Col1', 'Row1 Col2'],\n            ['Row2 Col1', 'Row2 Col2']\n        ]\n    }\n}"},
-    {"type": "t", "v": [5, "Object Table Key Value list:"]},
-    {"type": "ta", "v": {
-        "h": ["Name", "Type", "Description"],
-        "r": [
-            ["<code>h</code> Headers", "Array", "An array of strings, each representing a header for the table."],
-            ["<code>r</code> Rows", "Array[Array]", "An array of arrays, where each inner array represents a table row with its respective cell values."]
-        ]
-    }},
-    {"type": "t", "v": [5, "Object Snippet example:"]},
-    {"type": "s", "v": "{\n    'type': 's',\n    'v': \"def hello_world():\\n    print('Hello, World!')\"\n}"}
+{"type":"t","v":[1,"Header h1 Example"]},
+{"type":"t","v":[2,"Header h2 Example"]},
+{"type":"t","v":[3,"Header h3 Example"]},
+{"type":"t","v":[4,"Header h4 Example"]},
+{"type":"t","v":[5,"Header h5 Example"]},
+{"type":"p","v":"Parragraph Example."},
+{"type":"s","v":"{\n    'Code': 'Block',\n    'v': [\n        5,\n        \"Your &lt;b&gt;SNIPET&lt;br&gt; Exaample&lt;/b&gt;\"\n    ]\n}"},
+{"type":"ta","v":{
+"h":["Header 1", "Header 2", "Header 3"],
+"r":[
+["Row 1 Col 1", "Row 1 Col 2", "Row 1 Col 3"],
+["Row 2 Col 1", "Row 2 Col 2", "Row 2 Col 3"],
+["Row 3 Col 1", "Row 3 Col 2", "Row 3 Col 3"]
+]
+}}
 ]
 
 def generate_html(input_arr):
