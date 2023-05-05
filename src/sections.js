@@ -30,13 +30,19 @@ const sections = [
         },
         {
           "type": "direct",
-          "label": "Dependencies",
-          "url": "sections/docs/dependencies.html"
-        },
+          "label": "Insights & Dependencies",
+          "url": "sections/docs/insight.html"
+        }
+      ]
+    },
+    {
+      "type": "tree",
+      "label": "Py Generator",
+      "tree": [
         {
           "type": "direct",
-          "label": "Future Plans & Conclusion",
-          "url": "sections/docs/future.html"
+          "label": "Usage",
+          "url": "sections/pygen/pygen.html"
         }
       ]
     }

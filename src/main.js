@@ -20,7 +20,7 @@ function populateMenu() {
 
 function generateMenu(items, level) {
   let menuHTML = '<ul>';
-  let backgroundColor = `rgba(240, 240, 240, ${level * 0.1})`;
+  let backgroundColor = `rgba(0, 0, 0, ${level * 0.1})`;
   let paddingLeft = 5 + level * 10;
 
   items.forEach((item) => {
@@ -52,6 +52,6 @@ function loadContent(url) {
     });
 }
 function toggleArrowRotation(element) {
-  const arrowContainer = element.parentElement.querySelector(".arrow-container");
-  arrowContainer.classList.toggle("arrow-rotate");
+  //const arrowContainer = element.parentElement.querySelector(".arrow-container");
+  //arrowContainer.classList.toggle("arrow-rotate");
 }
