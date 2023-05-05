@@ -52,4 +52,9 @@
 </tbody>
 </table>
 <p>Note: These dependencies are already included in the code and imported as needed.</p>
+<h1 class="mb-4 text-center">Known Issues:</h1>
+<p>The application currently does not verify the integrity of sections.js, which could potentially lead to errors if the file is not properly formatted.
+While the nested tree structure of the sections array is flexible and allows for easy customization, it does not verify the integrity of the tree structure and its respective direct URLs. If the structure or URLs are incorrect, this could result in errors when loading pages.
+The application also does not validate the integrity of each HTML file loaded, which could potentially result in errors if the file is not properly formatted or if there are issues with the code.
+Currently, the application does not run scripts inside the sections, which may limit functionality for certain use cases.</p>
 </div>
