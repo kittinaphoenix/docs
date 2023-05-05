@@ -9,9 +9,9 @@ The repository is structured as follows:
 - `css/`: Contains the CSS files.
 - `libs/`: Contains the JS libraries files.
 - `src/`: Code folder.
-  - `main.js`: Contains the code.
+  - `main.js`: Contains the code that generates the menu and loads the sections.
   - `sections.js`: sections array (read documentation).
-- `sections/`: Contains thesections of the documentation.
+- `sections/`: Contains the sections of the documentation.
   - `docs/`: Contains its own documentation.
 - `index.html`: The main HTML file for the documentation site.
 - `README.md`: This file, containing the documentation for the documentation repository.
