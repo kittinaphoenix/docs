@@ -1,9 +1,31 @@
 :root {
+    /*fixed left menu colors*/
+    --palette-color:#3d65a1;
+    --menu-left-color-text:white;
+
+    /*do not touch this*/
     --bg-color: #fff;
     --text-color: #111;
     --code-bg-color: #f5f5f5;
     --code-text-color: #555;
 }
+/*touch this instead*/
+[data-theme='dark'] {
+    --bg-color: #0d1117;
+    --text-color: #f0f6fc;
+    --code-bg-color: #222;
+    --code-text-color: #ccc;
+}
+/*or this*/
+[data-theme='light'] {
+    --bg-color: #fff;
+    --text-color: #111;
+    --code-bg-color: #f5f5f5;
+    --code-text-color: #555;
+}
+/*
+Styles
+*/
 body {
     overflow: hidden;
     background-color: var(--bg-color);
@@ -16,40 +38,27 @@ code {
     color: var(--code-text-color) !important;
 }
 pre code {
-    border: 1px solid #3d65a1;
-    border-left: 5px solid #3d65a1;
+    border: 1px solid var(--palette-color);
+    border-left: 5px solid var(--palette-color);
     border-radius: 5px;
     display: block;
     padding: 10px;
 }
-[data-theme='dark'] {
-    --bg-color: #0d1117;
-    --text-color: #f0f6fc;
-    --code-bg-color: #222;
-    --code-text-color: #ccc;
-}
-
-[data-theme='light'] {
-    --bg-color: #fff;
-    --text-color: #111;
-    --code-bg-color: #f5f5f5;
-    --code-text-color: #555;
-}
 .form-switch .form-check-input {
-    border-color: #3d65a1;
-    box-shadow: 0 0 0 0 #3d65a1;
+    border-color: var(--palette-color);
+    box-shadow: 0 0 0 0 var(--palette-color);
 }
 .form-switch .form-check-input:checked {
-    background-color: #333;
-    border-color: #3d65a1;
-    box-shadow: 0 0 0 0 #3d65a1;
+    background-color: var(--code-bg-color);
+    border-color: var(--palette-color);
+    box-shadow: 0 0 0 0 var(--palette-color);
 }
 .docs-menu-left {
-    background-color: #3d65a1;
+    background-color: var(--palette-color);
     height: 100vh;
     position: sticky;
     top: 0;
-    color:white;
+    color:var(--menu-left-color-text);;
     overflow-y: scroll !important;
 }
 .docs-menu-left::-webkit-scrollbar {
@@ -57,7 +66,7 @@ pre code {
     width: 10px;
 }
 .docs-menu-left::-webkit-scrollbar-thumb {
-    background-color: var(--text-color);
+    background-color: var(--palette-color);
     border-radius: 5px;
 }
 .content {
@@ -102,7 +111,7 @@ pre code {
     display: block;
     padding: 5px 0;
     text-decoration: none;
-    color: white;
+    color: var(--menu-left-color-text);
 }
 .nav-list a:hover {
     background-color: rgba(0, 0, 0, 0.1);

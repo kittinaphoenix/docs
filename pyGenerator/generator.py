@@ -1,20 +1,26 @@
 # Example with all valid objects
 input_arr = [
-{"type":"t","v":[1,"Header h1 Example"]},
-{"type":"t","v":[2,"Header h2 Example"]},
-{"type":"t","v":[3,"Header h3 Example"]},
-{"type":"t","v":[4,"Header h4 Example"]},
-{"type":"t","v":[5,"Header h5 Example"]},
-{"type":"p","v":"Parragraph Example."},
-{"type":"s","v":"{\n    'Code': 'Block',\n    'v': [\n        5,\n        \"Your &lt;b&gt;SNIPET&lt;br&gt; Exaample&lt;/b&gt;\"\n    ]\n}"},
-{"type":"ta","v":{
-"h":["Header 1", "Header 2", "Header 3"],
-"r":[
-["Row 1 Col 1", "Row 1 Col 2", "Row 1 Col 3"],
-["Row 2 Col 1", "Row 2 Col 2", "Row 2 Col 3"],
-["Row 3 Col 1", "Row 3 Col 2", "Row 3 Col 3"]
-]
-}}
+  {"type":"t","v":[1,"Arkanoid Game"]},
+  {"type":"p","v":"In this game, the player controls a paddle to bounce a ball and break bricks."},
+  {"type":"t","v":[2,"Gameplay"]},
+  {"type":"p","v":"Move the paddle left and right to bounce the ball and break bricks. If the ball falls below the paddle, you lose a life. You have three lives."},
+  {"type":"t","v":[2,"Controls"]},
+  {"type":"ta","v":{
+    "h":["Key", "Action"],
+    "r":[
+      ["Left arrow", "Move paddle left"],
+      ["Right arrow", "Move paddle right"]
+    ]
+  }},
+  {"type":"t","v":[2,"Scoring"]},
+  {"type":"p","v":"Points are awarded for each brick broken, and bonus points are awarded for breaking multiple bricks with a single ball."},
+  {"type":"t","v":[2,"Levels"]},
+  {"type":"p","v":"There are three levels in the game, with increasing difficulty and a different arrangement of bricks."},
+  {"type":"t","v":[2,"Winning the Game"]},
+  {"type":"p","v":"The game is won when all bricks have been broken."},
+  {"type":"t","v":[2,"Losing the Game"]},
+  {"type":"p","v":"The game is lost when all lives have been lost."},
+  {"type":"s","v":"// Code for the Arkanoid game goes here"}
 ]
 
 def generate_html(input_arr):
