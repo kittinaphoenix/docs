@@ -6,15 +6,13 @@ This repository contains the documentation for the GPT Detectives game, includin
 
 The repository is structured as follows:
 
-- `css/`: Contains the CSS files, including Materialize.
-- `sections/`: Contains the main sections of the documentation.
-  - `home/`: Contains the home page for the documentation.
-  - `game_mechanics/`: Contains information about the game mechanics and how to play the game.
-  - `backend_api/`: Contains detailed information about the backend and its API.
-  - `blockchain_api/`: Contains detailed information about the blockchain API.
-  - `frontend/`: Contains information about the frontend.
-  - `other_sections/`: Contains any additional sections.
-- `left_menu.html`: Contains the left menu for the documentation site.
+- `css/`: Contains the CSS files.
+- `libs/`: Contains the JS libraries files.
+- `src/`: Code folder.
+  - `main.js`: Contains the code.
+  - `sections.js`: #sections array (read documentation).
+- `sections/`: Contains thesections of the documentation.
+  - `docs/`: Contains its own documentation.
 - `index.html`: The main HTML file for the documentation site.
 - `README.md`: This file, containing the documentation for the documentation repository.
 
