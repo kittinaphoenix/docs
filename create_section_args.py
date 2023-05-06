@@ -1,19 +1,23 @@
 import os
 import json
+import argparse
 
-# Example with all valid objects
-example = [
-{"type":"t","v":[1,"Header h1 Example"]},
-{"type":"p","v":"Parragraph Example."},
-{"type":"s","v":"{\n    'Code': 'Block',\n    'v': [\n        5,\n        \"Your &lt;b&gt;SNIPPET&lt;br&gt; Example&lt;/b&gt;\"\n    ]\n}"},
-{"type":"ta","v":{
-"h":["Header 1", "Header 2"],
-"r":[
-["Row 1 Col 1", "Row 1 Col 2"],
-["Row 2 Col 1", "Row 2 Col 2"]
-]
-}}
-]
+# Example of how to call the script, please use:
+# python create_section_args.py -t 1 -l "My Section" -i my_section -g 0 -c "your_content_file.json"
+# Example details and description
+#-t 1: This specifies the section type, with 1 meaning a "section". It corresponds to the --type argument in the script.
+#-l "My Section": This sets the label (name) of the section or group. It corresponds to the --label argument in the script.
+#-i my_section: This sets the unique identifier for the section or group. It corresponds to the --id argument in the script.
+#-g 0: This specifies the parent group ID. If set to 0, the section is added to the main branch. It corresponds to the --group argument in the script.
+#-c "your_content_file.json": This provides the path to the JSON file containing content objects for the section. It corresponds to the --content argument in the script.
+# JSON file content format should be as follows:
+# [
+# {"type":"t","v":[1,"Header h1 Example"]},
+# {"type":"p","v":"Paragraph Example."},
+# {"type":"s","v":"{\n    'Code': 'Block',\n    'v': [\n        5,\n        \"Your &lt;b&gt;SNIPPET&lt;br&gt; Example&lt;/b&gt;\"\n    ]\n}"},
+# {"type":"ta","v":{"h":["Header 1", "Header 2"],"r":[["Row 1 Col 1", "Row 1 Col 2"],["Row 2 Col 1", "Row 2 Col 2"]]}}
+# ]
+# Please ensure you use ONLY the supported objects as shown in the examples above. Other HTML tags like 'li', etc., are NOT supported.
 
 def generate_html(input_arr):
     output_str = '<div class="container mt-5 row offset-1 col-10">\n'
@@ -63,11 +67,22 @@ def generate_html(input_arr):
 with open('sections.json', 'r') as file:
     sections = json.load(file)
 
-# Accept the section parameters
-section_type = int(input('Section type (1="section", 2="group"): '))
-section_label = input('Section/Group label: ')
-section_id = input('Section/Group ID (unique): ')
-section_group_id = input('Parent Group ID (0 for none): ')
+# Set up argument parser
+parser = argparse.ArgumentParser(description='Create a section in the sections.json file')
+parser.add_argument('-t', '--type', type=int, required=True, help='Section type (1="section", 2="group")')
+parser.add_argument('-l', '--label', type=str, required=True, help='Section/Group label')
+parser.add_argument('-i', '--id', type=str, required=True, help='Section/Group ID (unique)')
+parser.add_argument('-g', '--group', type=str, required=True, help='Parent Group ID (0 for none)')
+parser.add_argument('-c', '--content', type=str, help='Path to the JSON file containing content objects')
+
+# Parse arguments
+args = parser.parse_args()
+
+# Assign the parsed arguments to variables
+section_type = args.type
+section_label = args.label
+section_id = args.id
+section_group_id = args.group
 
 def find_group(groups, group_id):
     for group in groups:
@@ -91,9 +106,9 @@ def is_unique_id(sections, section_id):
 if not is_unique_id(sections, section_id):
     print("The provided ID is not unique.")
 else:
-    if section_type == 1:
-        section_content = input('Section content (based on provided example): ')
-        section_content = json.loads(section_content)
+    if section_type == 1 and args.content:
+        with open(args.content, 'r') as content_file:
+            section_content = json.load(content_file)
 
         html_output = generate_html(section_content)
         if not html_output["success"]:

@@ -49,9 +49,15 @@
     "group": [
       {
         "type": "section",
-        "section_id": "script_usage",
-        "label": "Script Usage",
-        "url": "sections/pygen/script_usage.html"
+        "section_id": "script_usage_args",
+        "label": "Script Usage (args)",
+        "url": "sections/pygen/script_usage_args.html"
+      },
+      {
+        "type": "section",
+        "section_id": "script_usage_input",
+        "label": "Script Usage (input)",
+        "url": "sections/pygen/script_usage_input.html"
       }
     ]
   }

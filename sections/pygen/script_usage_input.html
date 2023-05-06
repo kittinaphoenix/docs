@@ -1,6 +1,6 @@
 <div class="container mt-5 row offset-1 col-10">
 <h1 class="mb-4 text-center">Generate Sections from the Python script</h1>
-<p>This documentation allows you to understand how to use the <code>create_section.py</code> script, to generate a section or group, and its respective HTML document based on a dummy template.</p>
+<p>This documentation allows you to understand how to use the <code>create_section_input.py</code> script, to generate a section or group, and its respective HTML document based on a dummy template.</p>
 <h1 class="mb-4 text-center">Script API Documentation</h1>
 <h2 class="mb-4 text-center">Introduction</h2>
 <p>This script is designed to create sections and groups of HTML content based on user input. It efficiently handles the creation and management of unique section and group IDs, as well as the generation of HTML files for each section.</p>
@@ -18,7 +18,7 @@
 <td class="text-center align-middle">A JSON file containing the structure of sections and groups, including their unique IDs, labels, and URLs.</td>
 </tr>
 <tr>
-<td class="text-center align-middle">create_section.py</td>
+<td class="text-center align-middle">create_section_input.py</td>
 <td class="text-center align-middle">The main Python script that processes user input and updates 'sections.json' and the corresponding HTML files.</td>
 </tr>
 </tbody>
@@ -29,8 +29,8 @@
 <p>Run the 'main_script.py' and follow the prompts to input the required information. The script will then generate the appropriate section or group, update the 'sections.json' file, and create or update the corresponding HTML files.</p>
 <h3 class="mb-4 text-center">Input Example</h3>
 <pre><code>Section type (1="section", 2="group"): 1
-Section/Group label: My Section/My Group
-Section ID/Group ID (unique): my_section/my_group
+Section/Group label: My Section
+Section ID/Group ID (unique): my_section
 Parent Group ID (0 for none): 0
 Section Content (based on provided example): [{"type":"t","v":[1,"Header Example"]},{"type":"p","v":"Paragraph Example."}]</code></pre>
 <p><i><b>*</b> Note the Section Content is provided in a single line.</i></p>
@@ -53,12 +53,12 @@ Section Content (based on provided example): [{"type":"t","v":[1,"Header Example
 <tr>
 <td class="text-center align-middle">Section/Group label</td>
 <td class="text-center align-middle">A string representing the label for the section or group.</td>
-<td class="text-center align-middle">My Section/My Group</td>
+<td class="text-center align-middle">My Section</td>
 </tr>
 <tr>
 <td class="text-center align-middle">Section/Group ID</td>
 <td class="text-center align-middle">A unique string identifier for the section or group.</td>
-<td class="text-center align-middle">my_section/my_group</td>
+<td class="text-center align-middle">my_section</td>
 </tr>
 <tr>
 <td class="text-center align-middle">Parent Group ID</td>
@@ -76,21 +76,33 @@ Section Content (based on provided example): [{"type":"t","v":[1,"Header Example
 <p>Note: When entering the 'Section content' input, the content must be provided as a single line JSON string to avoid errors in the script.</p>
 <pre><code style="text-align: left !important;">[
     {
-        "type":"section",
-        "label":"Section 1",
-        "url":"sections/section1.html"
+        "type":"t",
+        "v": [1,"Header h1 Example"]
     },
     {
-        "type":"group",
-        "label":"Grouped Sections 1",
-        "group_id":"group1",
-        "group":[
-            {
-                "type":"section",
-                "label":"Section 2",
-                "url":"sections/group1/section2.html"
-            }
-        ]
+        "type":"p",
+        "v":"Parragraph Example."
+    },
+    {
+        "type":"s",
+        "v":"{
+            'Code': 'Block',
+            'v': [
+                5,
+                "Your &lt;b&gt;SNIPPET&lt;br&gt; Example&lt;&gt;"
+            ]
+        }
+    },
+    {
+        "type":"ta",
+        "v":{
+            "h":["Header 1", "Header 2"],
+            "r":
+            [
+                ["Row 1 Col 1", "Row 1 Col 2"],
+                ["Row 2 Col 1", "Row 2 Col 2"]
+            ]
+        }
     }
 ]</code></pre>
 <h3 class="mb-4 text-center">Section Content - Object Types</h3>

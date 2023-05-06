@@ -13,7 +13,9 @@ The repository is structured as follows:
 - [sections/](./sections/): contains HTML files for different sections of the project.
 - [src/main.js](./src/main.js): contains JavaScript code for the main page.
 - [webfonts/](./webfonts/): contains web fonts used by the project.
-- [create_section.py](./pyGenerator/generator.py): contains Python code for generating sections for this project.
+- [create_section_input.py](./create_section_input.py): contains Python code for generating sections for this project (with input).
+- [create_section_args.py](./create_section_args.py): contains Python code for generating sections for this project (with args) (read documentation inside the file).
+- [create_section.sh](./create_section.sh): calls the [create_section_args.py](./create_section_args.py) (read documentation inside the file).
 - [sections.json](./sections.json): contains the array for sections.
 - [sections.template.json](./sections.template.json): template example for the sections.json file format.
 - [index.html](./index.html): the main HTML file for the project.
@@ -43,7 +45,7 @@ While the nested group structure of the sections array is flexible and allows fo
 The application also does not validate the integrity of each HTML file loaded, which could potentially result in errors if the file is not properly formatted or if there are issues with the code.
 Currently, the application does not run scripts inside the sections, which may limit functionality for certain use cases.
 
-## Generator [pyGenerator/generator.py](./create_section.py)
+## Generator [create_section_input.py](./create_section_input.py) & [create_section_args.py](./create_section_args.py)
 Experimental Python script that generates a sections and adds it to the sections.json array, and generates an HTML file inside the sections folder. This script is not required for the project to function and is intended for advanced users who wish to generate HTML programmatically. More specific usage is detailed on the respective section documentation.
 
 ## Contributing
