@@ -1,0 +1,125 @@
+<div class="container mt-5 row offset-1 col-10">
+<h1 class="mb-4 text-center">Generate Sections from the Python script</h1>
+<p>This documentation allows you to understand how to use the <code>create_section.py</code> script, to generate a section or group, and its respective HTML document based on a dummy template.</p>
+<h1 class="mb-4 text-center">Script API Documentation</h1>
+<h2 class="mb-4 text-center">Introduction</h2>
+<p>This script is designed to create sections and groups of HTML content based on user input. It efficiently handles the creation and management of unique section and group IDs, as well as the generation of HTML files for each section.</p>
+<h5 class="mb-4 text-center">Files Involved</h5>
+<table class="table">
+<thead>
+<tr>
+<th class="text-center align-middle">File Name</th>
+<th class="text-center align-middle">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center align-middle">sections.json</td>
+<td class="text-center align-middle">A JSON file containing the structure of sections and groups, including their unique IDs, labels, and URLs.</td>
+</tr>
+<tr>
+<td class="text-center align-middle">create_section.py</td>
+<td class="text-center align-middle">The main Python script that processes user input and updates 'sections.json' and the corresponding HTML files.</td>
+</tr>
+</tbody>
+</table>
+<h5 class="mb-4 text-center">Structure</h5>
+<p>The script takes user input to create sections or groups. Sections contain HTML content and are stored in separate files, while groups can contain other sections or groups, forming a nested structure.</p>
+<h5 class="mb-4 text-center">Usage</h5>
+<p>Run the 'main_script.py' and follow the prompts to input the required information. The script will then generate the appropriate section or group, update the 'sections.json' file, and create or update the corresponding HTML files.</p>
+<h3 class="mb-4 text-center">Input Example</h3>
+<pre><code>Section type (1="section", 2="group"): 1
+Section/Group label: My Section/My Group
+Section ID/Group ID (unique): my_section/my_group
+Parent Group ID (0 for none): 0
+Section Content (based on provided example): [{"type":"t","v":[1,"Header Example"]},{"type":"p","v":"Paragraph Example."}]</code></pre>
+<p><i><b>*</b> Note the Section Content is provided in a single line.</i></p>
+<h3 class="mb-4 text-center">Input Requirements</h3>
+<p>When running the script, you'll be prompted to provide the following inputs. Each input must be provided in one line:</p>
+<table class="table">
+<thead>
+<tr>
+<th class="text-center align-middle">Input Name</th>
+<th class="text-center align-middle">Description</th>
+<th class="text-center align-middle">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center align-middle">Section Type</td>
+<td class="text-center align-middle">An integer (1 or 2) indicating if it's a section (1) or group (2).</td>
+<td class="text-center align-middle">1</td>
+</tr>
+<tr>
+<td class="text-center align-middle">Section/Group label</td>
+<td class="text-center align-middle">A string representing the label for the section or group.</td>
+<td class="text-center align-middle">My Section/My Group</td>
+</tr>
+<tr>
+<td class="text-center align-middle">Section/Group ID</td>
+<td class="text-center align-middle">A unique string identifier for the section or group.</td>
+<td class="text-center align-middle">my_section/my_group</td>
+</tr>
+<tr>
+<td class="text-center align-middle">Parent Group ID</td>
+<td class="text-center align-middle">A string indicating the parent group ID. Use '0' if there's no parent group.</td>
+<td class="text-center align-middle">0</td>
+</tr>
+<tr>
+<td class="text-center align-middle">Section Content</td>
+<td class="text-center align-middle">An array with the required format in 'Object Types'.</td>
+<td class="text-center align-middle">See example in the code block below this table.</td>
+</tr>
+</tbody>
+</table>
+<h2 class="mb-4 text-center">Section Content Example</h2>
+<p>Note: When entering the 'Section content' input, the content must be provided as a single line JSON string to avoid errors in the script.</p>
+<pre><code style="text-align: left !important;">[
+    {
+        "type":"section",
+        "label":"Section 1",
+        "url":"sections/section1.html"
+    },
+    {
+        "type":"group",
+        "label":"Grouped Sections 1",
+        "group_id":"group1",
+        "group":[
+            {
+                "type":"section",
+                "label":"Section 2",
+                "url":"sections/group1/section2.html"
+            }
+        ]
+    }
+]</code></pre>
+<h3 class="mb-4 text-center">Section Content - Object Types</h3>
+<table class="table">
+<thead>
+<tr>
+<th class="text-center align-middle">Object Type</th>
+<th class="text-center align-middle">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center align-middle">t</td>
+<td class="text-center align-middle">Title:<br> contains an integer and a string as an array in 'v'.<br>The integer represents the header level (1-5), and the string is the header text.</td>
+</tr>
+<tr>
+<td class="text-center align-middle">p</td>
+<td class="text-center align-middle">Paragraph:<br> contains a string in 'v' representing the paragraph content.</td>
+</tr>
+<tr>
+<td class="text-center align-middle">s</td>
+<td class="text-center align-middle">Code snippet:<br> contains a string in 'v' representing the code snippet content.</td>
+</tr>
+<tr>
+<td class="text-center align-middle">ta</td>
+<td class="text-center align-middle">Table object:<br> contains a dictionary in 'v' with two keys:<br> 'h' for table headers (list of strings)<br>'r' for table rows (list of lists of strings).</td>
+</tr>
+</tbody>
+</table>
+<h2 class="mb-4 text-center align-middle">Conclusion</h2>
+<p>This script provides an efficient way to create and manage sections and groups with unique IDs, generate corresponding HTML files, and store the structure in a JSON file.</p>
+</div>

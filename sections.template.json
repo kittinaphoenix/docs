@@ -1,0 +1,19 @@
+[
+{
+"type":"section",
+"label":"Section 1",
+"url":"sections/section1.html"
+},
+{
+"type":"group",
+"label":"Grouped Sections 1",
+"group_id":"group1",
+"group":[
+{
+"type":"section",
+"label":"Section 2",
+"url":"sections/group1/section2.html"
+}
+]
+}
+]

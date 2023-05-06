@@ -10,7 +10,6 @@
     |__ bootstrap.min.css.map
     |__ default-light.min.css
     |__ styles.css
-|__ index.html
 |__ libs/
     |__ all.min.js
     |__ bootstrap.min.js
@@ -23,8 +22,11 @@
 |__ sections/
 |__ src/
     |__ main.js
-    |__ sections.js
-|__ webfonts/</code></pre>
+|__ webfonts/
+|__ create_section.py
+|__ index.html
+|__ sections.json
+|__ sections.template.json</code></pre>
 <h2 class="mb-4 text-center">Installation</h2>
 <pre><code>Clone this repository. & Open index.html in your browser to view the documentation site.</code></pre>
 <h2 class="mb-4 text-center">Usage</h2>
@@ -39,5 +41,5 @@
 <p>The application also does not validate the integrity of each HTML file loaded, which could potentially result in errors if the file is not properly formatted or if there are issues with the code.</p>
 <p>Currently, the application does not run scripts inside the sections, which may limit functionality for certain use cases.</p>
 <h2 class="mb-4 text-center">Generator</h2>
-<p>The pyGenerator folder contains an experimental Python script that generates HTML based on an input array. This script is not required for the project to function and is intended for advanced users who wish to generate HTML programmatically. To use the script, modify the input_arr array in generator.py and run the script from the command line: python generator.py. The generated HTML will be printed to the console.</p>
+<p>The file <code>create_section.py</code> is an experimental Python script that generates a section based on the input. This script is not required for the project to function and is intended for advanced users who wish to generate HTML programmatically.</p>
 </div>

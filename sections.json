@@ -1,0 +1,58 @@
+[
+  {
+    "type": "section",
+    "section_id": "home",
+    "label": "Home",
+    "url": "sections/home.html"
+  },
+  {
+    "type": "group",
+    "group_id": "docs",
+    "label": "Docs",
+    "group": [
+      {
+        "type": "section",
+        "section_id": "intro",
+        "label": "Overview",
+        "url": "sections/docs/intro.html"
+      },
+      {
+        "type": "section",
+        "section_id": "install",
+        "label": "Installation",
+        "url": "sections/docs/install.html"
+      },
+      {
+        "type": "section",
+        "section_id": "structure",
+        "label": "Structure",
+        "url": "sections/docs/structure.html"
+      },
+      {
+        "type": "section",
+        "section_id": "howto",
+        "label": "Usage",
+        "url": "sections/docs/howto.html"
+      },
+      {
+        "type": "section",
+        "section_id": "insight",
+        "label": "Insights & Dependencies",
+        "url": "sections/docs/insight.html"
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "group_id": "pygen",
+    "label": "Generator",
+    "group": [
+      {
+        "type": "section",
+        "section_id": "script_usage",
+        "label": "Script Usage",
+        "url": "sections/pygen/script_usage.html"
+      }
+    ]
+  }
+]
