@@ -4,18 +4,13 @@ import json
 # Example with all valid objects
 example = [
 {"type":"t","v":[1,"Header h1 Example"]},
-{"type":"t","v":[2,"Header h2 Example"]},
-{"type":"t","v":[3,"Header h3 Example"]},
-{"type":"t","v":[4,"Header h4 Example"]},
-{"type":"t","v":[5,"Header h5 Example"]},
 {"type":"p","v":"Parragraph Example."},
-{"type":"s","v":"{\n    'Code': 'Block',\n    'v': [\n        5,\n        \"Your &lt;b&gt;SNIPET&lt;br&gt; Exaample&lt;/b&gt;\"\n    ]\n}"},
+{"type":"s","v":"{\n    'Code': 'Block',\n    'v': [\n        5,\n        \"Your &lt;b&gt;SNIPPET&lt;br&gt; Example&lt;/b&gt;\"\n    ]\n}"},
 {"type":"ta","v":{
-"h":["Header 1", "Header 2", "Header 3"],
+"h":["Header 1", "Header 2"],
 "r":[
-["Row 1 Col 1", "Row 1 Col 2", "Row 1 Col 3"],
-["Row 2 Col 1", "Row 2 Col 2", "Row 2 Col 3"],
-["Row 3 Col 1", "Row 3 Col 2", "Row 3 Col 3"]
+["Row 1 Col 1", "Row 1 Col 2"],
+["Row 2 Col 1", "Row 2 Col 2"]
 ]
 }}
 ]
@@ -43,12 +38,12 @@ def generate_html(input_arr):
                         return {"success": False, "error": "Invalid input format for table cell."}
             output_str += '<table class="table">\n<thead>\n<tr>\n'
             for header in obj['v']['h']:
-                output_str += f'<th class="text-center">{header}</th>\n'
+                output_str += f'<th class="text-center align-middle">{header}</th>\n'
             output_str += '</tr>\n</thead>\n<tbody>\n'
             for row in obj['v']['r']:
                 output_str += '<tr>\n'
                 for col in row:
-                    output_str += f'<td class="text-center">{col}</td>\n'
+                    output_str += f'<td class="text-center align-middle">{col}</td>\n'
                 output_str += '</tr>\n'
             output_str += '</tbody>\n</table>\n'
         elif obj['type'] == 's':
