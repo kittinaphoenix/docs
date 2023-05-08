@@ -109,29 +109,32 @@ Section Content (based on provided example): [{"type":"t","v":[1,"Header Example
 <table class="table">
 <thead>
 <tr>
-<th class="text-center align-middle">Object Type</th>
+<th class="text-center align-middle">Type</th>
 <th class="text-center align-middle">Description</th>
+<th class="text-center align-middle">Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="text-center align-middle">t</td>
-<td class="text-center align-middle">Title:<br> contains an integer and a string as an array in 'v'.<br>The integer represents the header level (1-5), and the string is the header text.</td>
+<td class="text-center align-middle"><code>t</code></td>
+<td class="text-center align-middle">Title. Must contain in 'v' an array with: an integer (1 - 5) and a string text.</td>
+<td class="text-center align-middle"><code>{"type":"t","v":[1,"Header h1 Example"]}</code></td>
 </tr>
 <tr>
-<td class="text-center align-middle">p</td>
-<td class="text-center align-middle">Paragraph:<br> contains a string in 'v' representing the paragraph content.</td>
+<td class="text-center align-middle"><code>p</code></td>
+<td class="text-center align-middle">Paragraph. Must containt in 'v' and a string text.</td>
+<td class="text-center align-middle"><code>{"type":"p","v":"Paragraph Example."}</code></td>
 </tr>
 <tr>
-<td class="text-center align-middle">s</td>
-<td class="text-center align-middle">Code snippet:<br> contains a string in 'v' representing the code snippet content.</td>
+<td class="text-center align-middle"><code>s</code></td>
+<td class="text-center align-middle">Code Block Snippet. contains a string text in 'v' representing the code snippet content.</td>
+<td class="text-center align-middle"><code>{"type":"s","v":"{\n 'Code': 'Block',\n 'v': [\n 5,\n "Your <b>SNIPPET<br> Example</b>"\n ]\n}"}</code></td>
 </tr>
 <tr>
-<td class="text-center align-middle">ta</td>
-<td class="text-center align-middle">Table object:<br> contains a dictionary in 'v' with two keys:<br> 'h' for table headers (list of strings)<br>'r' for table rows (list of lists of strings).</td>
+<td class="text-center align-middle"><code>ta</code></td>
+<td class="text-center align-middle">Table. contains a dictionary in 'v' with two keys: 'h' for headers (list of strings) and 'r' for rows (list of lists of strings)</td>
+<td class="text-center align-middle"><code>{"type":"ta","v":{"h":["Header 1", "Header 2"],"r":[["Row 1 Col 1", "Row 1 Col 2"],["Row 2 Col 1", "Row 2 Col 2"]]}}</code></td>
 </tr>
 </tbody>
 </table>
-<h2 class="mb-4 text-center align-middle">Conclusion</h2>
-<p>This script provides an efficient way to create and manage sections and groups with unique IDs, generate corresponding HTML files, and store the structure in a JSON file.</p>
 </div>
